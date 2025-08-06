@@ -5,6 +5,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.WebSocket;
 import java.net.http.WebSocket.Listener;
+import java.nio.ByteBuffer;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeUnit;
 
@@ -34,6 +35,13 @@ class BinanceWebSocketListener implements Listener {
 	public CompletionStage<?> onText(WebSocket webSocket, CharSequence data, boolean last) {
 		System.out.println(data.toString());
 		return Listener.super.onText(webSocket, data, last);
+	}
+	
+	
+	@Override
+	public CompletionStage<?> onBinary(WebSocket webSocket, ByteBuffer data, boolean last) {
+		// TODO Auto-generated method stub
+		return Listener.super.onBinary(webSocket, data, last);
 	}
 
 	@Override

@@ -15,6 +15,5 @@ public class BusinessService {
 			System.err.println(Thread.currentThread().getName()+" is running BusinessService::fun");
 			try { TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(1, 3));}catch(Exception e) {}
 			return CompletableFuture.completedFuture(42);
-
 	}
 }
