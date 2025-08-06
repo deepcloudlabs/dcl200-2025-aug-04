@@ -15,6 +15,7 @@ public class Exercise04 {
 		System.out.println(weakRef.get());
 		var cache = new WeakHashMap<String, Circle>();
 		cache.put("1", new Circle(0, 0, 0));
+		System.out.println(cache.containsKey("1"));
 		System.gc(); // cache invalidation/eviction
 		System.out.println(cache.containsKey("1"));
 	}
